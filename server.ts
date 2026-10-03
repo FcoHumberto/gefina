@@ -22,5 +22,5 @@ createServer(function (request, response) {
     response.end(JSON.stringify({error: {
         status: 404,
         message: "Recurso não encontrado."
-    }}, null, 2))
+    }}, null, 2) )
 }).listen(3000);
