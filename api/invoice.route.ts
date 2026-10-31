@@ -1,31 +1,31 @@
 import { Router } from 'express';
 
-import { 
-    findManyInVoices,
-    findInvoiceById,
- } from './invoice.service.ts';
+import { findInvoiceById, findManyInVoices } from './invoice.service.ts';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    const invoices = findManyInVoices();
+router.get('/', (_req, res) => {
+	const invoices = findManyInVoices();
 
-    res.status(200).json(invoices);
+	res.status(200).json(invoices);
 });
 
 router.get('/:id', (req, res) => {
-    const id = Number(req.params.id);
+	const id = Number(req.params.id);
 
-    const check = !id || id < 1 || !Number.isInteger(id);
+	const check = !id || id < 1 || !Number.isInteger(id);
 
-    if(check) res.status(400).json({error: {
-        status: 400,
-        message: 'Identificador inválido.'
-    }});
+	if (check)
+		res.status(400).json({
+			error: {
+				status: 400,
+				message: 'Identificador inválido.'
+			}
+		});
 
-    const invoice = findInvoiceById(id);
+	const invoice = findInvoiceById(id);
 
-    res.status(200).json(invoice)
+	res.status(200).json(invoice);
 });
 
 export default router;
