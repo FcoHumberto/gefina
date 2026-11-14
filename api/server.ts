@@ -5,23 +5,23 @@ import invoiceRouter from './invoice.route.ts';
 const app = express();
 
 app.get('/api/health', (_req, res) =>
-	res.status(200).json({
-		sucess: {
-			status: 200,
-			message: 'Servidor em execução.'
-		}
-	})
+  res.status(200).json({
+    sucess: {
+      status: 200,
+      message: 'Servidor em execução.'
+    }
+  })
 );
 
 app.use('/api/invoices', invoiceRouter);
 
 app.use((_req, res) =>
-	res.status(404).json({
-		error: {
-			status: 404,
-			message: 'Recurso não encontrado.'
-		}
-	})
+  res.status(404).json({
+    error: {
+      status: 404,
+      message: 'Recurso não encontrado.'
+    }
+  })
 );
 
 app.listen(3000);
