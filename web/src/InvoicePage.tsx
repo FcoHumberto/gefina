@@ -10,6 +10,7 @@ export default function InvoicePage() {
             issueDate: '2026-09-01',
             dueDate: '2026-09-30',
             customer: {
+                id: 1,
                 name: 'Oficina Flint',
                 email: 'comercial@flint.ws'
             }
@@ -21,6 +22,7 @@ export default function InvoicePage() {
             issueDate: '2026-10-01',
             dueDate: '2026-10-31',
             customer: {
+                id: 2,
                 name: 'Academia Aurelia',
                 email: 'comercial@aurelia.edu'
             }
@@ -32,6 +34,7 @@ export default function InvoicePage() {
             issueDate: '2026-10-21',
             dueDate: '2026-11-21',
             customer: {
+                id: 3,
                 name: 'Patrulha Aérea',
                 email: 'comercial@airspace.patrol'
             }

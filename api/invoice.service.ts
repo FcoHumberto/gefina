@@ -1,18 +1,16 @@
 type InvoiceStatus = 'paid' | 'pending';
 
-interface Customer {
-  uid: number;
-  name: string;
-  email: string;
-}
-
-interface Invoice {
+export interface Invoice {
   id: number;
   amount: number;
   status: InvoiceStatus;
   issueDate: string;
   dueDate: string;
-  customer: Customer;
+  customer: {
+    id: number;
+    name: string;
+    email: string;
+  };
 }
 
 const invoices: Invoice[] = [
@@ -23,7 +21,7 @@ const invoices: Invoice[] = [
     issueDate: '2026-09-01',
     dueDate: '2026-09-30',
     customer: {
-      uid: 1,
+      id: 1,
       name: 'Oficina Flint',
       email: 'comercial@flint.ws'
     }
@@ -35,7 +33,7 @@ const invoices: Invoice[] = [
     issueDate: '2026-10-01',
     dueDate: '2026-10-31',
     customer: {
-      uid: 2,
+      id: 2,
       name: 'Academia Aurelia',
       email: 'comercial@aurelia.edu'
     }
@@ -47,7 +45,7 @@ const invoices: Invoice[] = [
     issueDate: '2026-10-21',
     dueDate: '2026-11-21',
     customer: {
-      uid: 3,
+      id: 3,
       name: 'Patrulha Aérea',
       email: 'comercial@airspace.patrol'
     }
